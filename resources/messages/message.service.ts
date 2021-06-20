@@ -1,4 +1,4 @@
-import {getRepository, getConnection, EntityRepository} from "typeorm";
+import {getRepository} from "typeorm";
 import MessageEntity from './message.entity';
 
 const MessageService = () => getRepository(MessageEntity);
