@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "lib": ["es5", "es6", "dom"],
+    "noEmit": false,
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "paths": {
+      "@root/*": [
+        "./*"
+      ],
+      "@resources/*": [
+        "./resources/*"
+      ]
+    },
+    "outDir": "./build",
+    "rootDirs": [
+      "."
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
