@@ -10,10 +10,19 @@ MessagesRouter.get('/', async (req, res) => {
     res.send(users);
 });
 
+MessagesRouter.post('/', async (req, res) => {
+    const {user, content} = req.body;
+    const message = Messages.create();
+    message.user = user;
+    message.content = content;
+    await Messages.save(message);
+    res.send({success: true});
+});
+
 MessagesRouter.get('/:id', async (req, res) => {
     const {id} = req.params;
-    const user = await Messages.findOne({id: id});
-    res.send(user);
+    const message = await Messages.findOne({id: id});
+    res.send(message);
 });
 
 export default MessagesRouter;

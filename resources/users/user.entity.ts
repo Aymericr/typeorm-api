@@ -18,7 +18,7 @@ export default class UserEntity extends BaseEntity {
     @PrimaryColumn({length: PK_LENGTH})
     id: string;
 
-    @Column({length: 100})
+    @Column({length: 100, unique: true})
     username: string;
 
     @BeforeInsert()

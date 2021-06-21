@@ -14,6 +14,21 @@ export default class UserService {
     }
 
     public findOne = async (options) => this.repository.findOne(options);
+
+    public create = async (data) => {
+        let result, error;
+        try {
+            const user = this.repository.create(data);
+            await this.repository.save(user);
+            result = true;
+            return [result, error]
+        } catch (error) {
+            console.log(error);
+            return [result, error]
+
+        }
+
+    };
 }
 
 // const UserService = getRepository(UserEntity);
