@@ -21,7 +21,8 @@
   },
   "_moduleAliases": {
     "@root": "./",
-    "@resources": "./resources"
+    "@resources": "./resources",
+    "@routers": "./routers"
   },
   "dependencies": {
     "express": "^4.17.1",

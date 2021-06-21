@@ -5,13 +5,14 @@ import {
     Router,
 } from 'express';
 
-// import UsersRouter from './users';
+import UsersRouter from '@routers/users';
+import MessagesRouter from '@routers/messages';
 
 const BaseRouter = Router();
 
-
 // API
-// BaseRouter.use('/users', UsersRouter);
+BaseRouter.use('/users', UsersRouter);
+BaseRouter.use('/messages', MessagesRouter);
 
 BaseRouter.get('/', (req, res) => {
     res.send('Hello world!')
@@ -22,4 +23,4 @@ BaseRouter.use((req: Request, res: Response, next: NextFunction) => {
     res.status(404).send();
 });
 
-export default BaseRouter;
+module.exports = BaseRouter;

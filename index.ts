@@ -1,9 +1,7 @@
 import "reflect-metadata";
 import 'module-alias/register';
-
 import {createConnection} from "typeorm";
 import express, {NextFunction, Request, Response} from 'express';
-import BaseRouter from 'routers';
 import {StatusCodes} from 'http-status-codes';
 
 const startServer = async () => {
@@ -18,6 +16,7 @@ const startServer = async () => {
         });
     });
 
+    const BaseRouter = require('routers');
     app.use('/', BaseRouter);
 
     const PORT = Number(3000);
