@@ -1,0 +1,50 @@
+{
+  "name": "api",
+  "main": "./build/index.ts",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "nodemon",
+    "typeorm": "ts-node --project ./tsconfig.json -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "migration:generate": "yarn typeorm migration:generate",
+    "migration:run": "yarn typeorm migration:run",
+    "migration:revert": "yarn typeorm migration:revert"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "."
+    ],
+    "ext": "ts",
+    "ignore": [
+      "node_modules"
+    ],
+    "exec": "ts-node -r tsconfig-paths/register ./"
+  },
+  "_moduleAliases": {
+    "@root": "./",
+    "@resources": "./resources",
+    "@routers": "./routers"
+  },
+  "dependencies": {
+    "@types/socket.io": "^3.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "http-status-codes": "^2.1.4",
+    "module-alias": "^2.2.2",
+    "nanoid": "^3.1.23",
+    "pg": "^8.6.0",
+    "reflect-metadata": "^0.1.13",
+    "socket.io": "^4.1.2",
+    "typeorm": "^0.2.34"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.12",
+    "@types/faker": "^5.5.6",
+    "@types/node": "^15.12.4",
+    "nodemon": "^2.0.7",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.3.4"
+  }
+}
